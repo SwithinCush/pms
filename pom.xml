@@ -6,10 +6,7 @@
 	<artifactId>pms</artifactId>
 	<version>0.0.1</version>
 	<name>PostalMate Suite</name>
-	<description>PostalMate Suite is a framework and a set of tools used
-  for running a Retail Shipping Store that uses PostalMate as it's POS
-  and shipping software solution.
-  </description>
+	<description>PostalMate Suite is a framework and a set of tools used  for running a Retail Shipping Store that uses PostalMate as it's POS  and shipping software solution.</description>
 	<url>http://pms.uptownpostalannex.com</url>
 	<packaging>pom</packaging>
 	<scm>
@@ -24,7 +21,7 @@
 	</prerequisites>
 	<properties>
 		<pms.compiler.fork>false</pms.compiler.fork>
-		<pms.bulid-utils.version>3.0.0</pms.bulid-utils.version>
+		<pms.build-utils.version>3.0.0</pms.build-utils.version>
 		<pms.jdk.version>1.6</pms.jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
