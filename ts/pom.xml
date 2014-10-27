@@ -15,7 +15,9 @@
 		<ts.version>1.0.0</ts.version>
 	</properties>
 	<modules>
-
+		<module>ts-common</module>
+		<module>ts-db</module>
+		<module>ts-app</module>
 	</modules>
 	<build>
 		<pluginManagement>
