@@ -21,8 +21,10 @@
 		<pms.commons-collections.version>3.2.1</pms.commons-collections.version>
 		<pms.commons-lang.version>2.6</pms.commons-lang.version>
 		<pms.log4j.version>1.2.17</pms.log4j.version>
+		<pms.ibatis.version>2.1.7.597</pms.ibatis.version>
 		<pms.joda.time.version>2.2</pms.joda.time.version>
 		<pms.joda.hibernate-persistence.version>1.3</pms.joda.hibernate-persistence.version>
+		<pms.jna.version>4.1.0</pms.jna.version>
 		<pms.junit.version>4.11</pms.junit.version>
 		<pms.slf4j.version>1.7.7</pms.slf4j.version>
 		<pms.checkstyle.extension />
