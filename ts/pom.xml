@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ts.pms</groupId>
+		<artifactId>pms-parent</artifactId>
+		<version>0.0.1</version>
+		<relativePath>../pms-parent</relativePath>
+	</parent>
+	<artifactId>ts</artifactId>
+	<version>dev</version>
+	<packaging>pom</packaging>
+	<name>TS Group</name>
+	<properties>
+		<ts.version>1.0.0</ts.version>
+	</properties>
+	<modules>
+
+	</modules>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>flatten-maven-plugin</artifactId>
+					<version>1.0.0-beta-2</version>
+					<configuration>
+					</configuration>
+					<executions>
+						<execution>
+							<id>flatten</id>
+							<phase>process-resources</phase>
+							<goals>
+								<goal>flatten</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

@@ -1,0 +1,57 @@
+Setting up an Eclipse project to build PMS is pretty easy. There are three parts to it:
+Required plugins
+
+We use several Eclipse plugins to make building PMS a bit easier
+
+    Checkstyle - we use checkstyle to make sure we have consistent code style as well as to find various types of bugs and other issues. http://eclipse-cs.sourceforge.net/update
+    PMD - like Checkstyle, we use PMD to find potential programming problems in the code. Point the Eclipse auto-install thing at http://pmd.sourceforge.net/eclipse
+    Subversion plugins - there are a couple of these to enable Subversion checkins/checkouts from within eclipse: http://subclipse.tigris.org/update_1.4.x
+
+
+(info) While there exist Maven plug-ins for Eclipse, team developer experience has found using them with PMS problematic at best. We recommend importing the PMS source code as Eclipse projects as shown below and/or using Maven externally (i.e., from a command-line window) as discussed on the PMS build page.
+To install the plugins:
+
+    Go to
+
+    Help -> Install New Software -> Install
+
+    Click "Available Software Sites" and add the three remote sites listed above. Select just those three.
+    Back on the Install window, select "Work With: -All Available Sites-, and choose the three plugins listed above.
+    Return to "Available Software Sites" and reactivate the other remote sites (for subsequent updates/installs).
+
+Eclipse will then download and install those plugins.
+
+First check out PMS from Subversion.
+
+To create a workspace, just run from the root directory of the CXF project (see the build page for more detailed information):
+
+> mvn -Pfastinstall
+> mvn -Psetup.eclipse  
+
+OR
+
+> mvn install -Pfastinstall -Psetup.eclipse
+
+This creates a new workspace in "../workspace" for use with CXF.
+
+If you don't want the workspace there, you can run:
+
+"mvn -Psetup.eclipse -Declipse.workspace.dir=path/to/workspace"
+
+If you don't want the eclipse projects' output directory to be ./target directory (by default) but ./eclipse-classes, you can run:
+
+"mvn -Psetup.eclipse -Pset.eclipse.output"
+
+What this does is create a workspace and imports our checkstyle rules, the maven 2 repository, code format rules, import order rules, etc... into that workspace. It also goes through each sub-project and creates the .project and .classpath files. This process will take some time. It will down load source jars for most of the dependencies and hook them up in the .classpath file as well. Thus, while coding/debugging, you can trace right into the dependent libraries. While running, you WILL see a bunch of warnings and such flying by. There are a bunch of jars on ibiblio that do NOT have source jars with them. Thus, you will see warning about those. Those warnings are safely ignorable. As long as it says "BUILD SUCCESSFUL" at the end, you should be OK.
+Create the project in Eclipse
+
+    In eclipse, switch to the workspace you created above.
+    Go To:
+
+    File -> Import....
+
+    Select "Existing Projects into Workspace" and hit Next
+    Select root directory: enter the path to your trunk directory and hit Next.
+    Select all the subprojects and hit Finish. Eclipse will import and rebuild all the subprojects selected. This will take a while.
+
+That's all there is to it. From eclipse, all the unit tests and system tests should be runnable. However, to build kits/jars and stuff, you still need to use the command line "mvn" stuff.
