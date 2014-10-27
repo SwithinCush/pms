@@ -52,7 +52,7 @@
 		<url></url>
 	</organization>
 	<modules>
-
+		<module>parent</module>
 	</modules>
 	<profiles>
 		<profile>
